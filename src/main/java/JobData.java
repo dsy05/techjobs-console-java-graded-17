@@ -72,7 +72,7 @@ public class JobData {
 
             String aValue = row.get(column);
 
-            if (aValue.contains(value)) {
+            if (aValue.toLowerCase().contains(value.toLowerCase())) {
                 jobs.add(row);
             }
         }
@@ -100,10 +100,10 @@ public class JobData {
                 String aValue = row.get(job);
                 //System.out.println(aValue);
 
-                if (aValue.contains(value)) {
-                    if (!jobs.contains(row)) {
+                if (aValue.toLowerCase().contains(value.toLowerCase()) && !jobs.contains(row)) {
+                    //if (!jobs.contains(row)) {
                         jobs.add(row);
-                    }
+                    //}
                 }
                 //another for loop with value then if statement case sensitive to lower case .contains in if statemt
             }
